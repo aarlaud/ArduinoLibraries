@@ -22,12 +22,13 @@ written by Adafruit Industries
 
 class DHT {
  private:
-  uint8_t data[6];
   uint8_t _pin, _type, _count;
   unsigned long _lastreadtime;
   boolean firstreading;
 
  public:
+    uint8_t data[6];
+
   DHT(uint8_t pin, uint8_t type, uint8_t count);
   void begin(void);
   float readTemperature(bool S=false);

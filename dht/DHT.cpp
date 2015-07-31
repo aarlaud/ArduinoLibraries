@@ -104,7 +104,7 @@ boolean DHT::read(void) {
     // ie there was a rollover
     _lastreadtime = 0;
   }
-  if (!firstreading && ((currenttime - _lastreadtime) < 2000)) {
+  if (!firstreading && ((currenttime - _lastreadtime) < 0)) { //was 2000 but doesn't play well with sleeping device
     return true; // return last correct measurement
     //delay(2000 - (currenttime - _lastreadtime));
   }
